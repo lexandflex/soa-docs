@@ -1,0 +1,531 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "For authentication, you need to pass an API token in the format <b>\"Bearer {token}\"</b>",
+    "title": "SOA - reception forms",
+    "version": "2.0"
+  },
+  "host": "soa-reception-company.herokuapp.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "reception-form-controller",
+      "description": "Reception Form Controller"
+    },
+    {
+      "name": "test-controller",
+      "description": "Test Controller"
+    }
+  ],
+  "paths": {
+    "/api/v1/reception-form": {
+      "post": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "create",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "form",
+            "description": "form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReceptionForm"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Mono«ReceptionForm»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    },
+    "/api/v1/reception-form/all": {
+      "post": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "getAll",
+        "operationId": "getAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "filter",
+            "description": "filter",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ReceptionFormFilter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Flux«ReceptionForm»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    },
+    "/api/v1/reception-form/approve": {
+      "post": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "approveFormsByCardIds",
+        "operationId": "approveFormsByCardIdsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ids",
+            "description": "ids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Flux«ReceptionForm»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    },
+    "/api/v1/reception-form/decline": {
+      "post": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "declineFormsByCardIds",
+        "operationId": "declineFormsByCardIdsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ids",
+            "description": "ids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Flux«ReceptionForm»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    },
+    "/api/v1/reception-form/{id}": {
+      "get": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "getById",
+        "operationId": "getByIdUsingGET",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Mono«ReceptionForm»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "update",
+        "operationId": "updateUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "form",
+            "description": "form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReceptionForm"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Mono«ReceptionForm»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "reception-form-controller"
+        ],
+        "summary": "deleteById",
+        "operationId": "deleteByIdUsingDELETE",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Mono«Void»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    },
+    "/api/v1/test/test": {
+      "get": {
+        "tags": [
+          "test-controller"
+        ],
+        "summary": "test",
+        "operationId": "testUsingGET",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Mono«AppUser»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer token": [
+              "global"
+            ]
+          }
+        ],
+        "deprecated": false
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer token": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "AppUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isLocked": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ADMIN",
+              "STUDENT",
+              "TEACHER"
+            ]
+          }
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "title": "AppUser"
+    },
+    "Flux«ReceptionForm»": {
+      "type": "object",
+      "properties": {
+        "prefetch": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Flux«ReceptionForm»"
+    },
+    "Mono«AppUser»": {
+      "type": "object",
+      "title": "Mono«AppUser»"
+    },
+    "Mono«ReceptionForm»": {
+      "type": "object",
+      "title": "Mono«ReceptionForm»"
+    },
+    "Mono«Void»": {
+      "type": "object",
+      "title": "Mono«Void»"
+    },
+    "ReceptionForm": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "professionId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "surname": {
+          "type": "string"
+        }
+      },
+      "title": "ReceptionForm"
+    },
+    "ReceptionFormFilter": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        }
+      },
+      "title": "ReceptionFormFilter"
+    }
+  }
+}
