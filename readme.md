@@ -17,7 +17,9 @@
 3) frontend docs - [link](frontend/hostel.md) `author: Issa Basel`
 
 ## students service
-todo - @Dzmitry
+1) docs - [link](students-docs.md) `author: Dzmitry Starastsenka`
+2) swagger - https://soa-students.herokuapp.com/swagger/index.html `author: Dzmitry Starastsenka`
 
 ## learning plans service
-todo - @Dzmitry
+1) docs - [link](study-plans-docs.md) `author: Dzmitry Starastsenka`
+2) swagger - https://soa-study-plans.herokuapp.com/swagger/index.html `author: Dzmitry Starastsenka`
