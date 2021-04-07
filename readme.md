@@ -22,3 +22,4 @@
 
 ## learning plans service
 1) docs - [link](study-plans-docs.md) `author: Dzmitry Starastsenka`
+2) swagger - https://soa-study-plans.herokuapp.com/swagger/index.html `author: Dzmitry Starastsenka`
