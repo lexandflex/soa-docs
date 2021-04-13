@@ -15,14 +15,16 @@ Type `npm install` at project directory.
 Type `npm start` to start the application.
 
 # Students
-![image](https://ibb.co/nC9YwM8)
+![image](https://i.ibb.co/L5mc0dh/chrome-70o-UQi-PGax.png)
 
 ### Features:
 Notifications: Come after each request.
 
 Add new item: click at `Add new student` to add an item.
-![image](https://ibb.co/fN54ZK3)
+![image](https://i.ibb.co/NNPZfk0/chrome-ISq5-Qr-EIW3.png)
+
 Edit item: click at `Edit` to edit an item.
-![image](https://ibb.co/fN54ZK3)
+![image](https://i.ibb.co/NNPZfk0/chrome-ISq5-Qr-EIW3.png)
+
 Delete item: click at `Delete` to delete an item.
 
