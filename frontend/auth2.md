@@ -19,4 +19,4 @@ Type `npm start` to start the application.
 ![image](https://i.ibb.co/QHY23Gp/image.png)
 
 ## Sign In:
-![image](https://i.ibb.co/wg7PtM9/image.png)
+![image](https://i.ibb.co/T86zdqy/chrome-n21l-NOg8y-P.png)
