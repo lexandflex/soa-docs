@@ -1,5 +1,5 @@
 
-HOST: https://soafrontend.herokuapp.com/
+HOST: https://soa-university.herokuapp.com/
 
 # Application dependencies
 To run the application, you need to install Node.js.
